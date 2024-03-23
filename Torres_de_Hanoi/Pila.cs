@@ -40,5 +40,14 @@ namespace Torres_de_Hanoi
             if (Size == 0) return true;
             return false;
         }
+
+        public List<int> obtenerContenidoPila() { // esta funcion es usada en la impresion en consola del programa en hanoi.cs
+            List<int> contenido = new List<int>();
+            foreach (Disco disco in Discos) {
+                contenido.Add(disco.Valor);
+            }
+            return contenido;
+        }
+
     }
 }

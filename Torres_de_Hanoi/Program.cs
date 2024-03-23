@@ -75,11 +75,23 @@ namespace Torres_de_Hanoi
                 {
                     case 'I':
                         Console.WriteLine("Has elegido el algoritmo iterativo");
+                        Console.WriteLine();
+                        Console.WriteLine("Situación inicial: ");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
                         movimientosHechos = hanoi.iterativo(cantidadDiscos, ini, fin, aux);
                         break;
                     case 'R':
                         Console.WriteLine("Has elegido el algoritmo recursivo");
-                        movimientosHechos = hanoi.recursivo(cantidadDiscos, ini, fin, aux);
+                        Console.WriteLine();
+                        Console.WriteLine("Situación inicial: ");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                        movimientosHechos = hanoi.recursivoConTexto(cantidadDiscos, ini, fin, aux);
                         break;
                     default:
                         Console.WriteLine("Opción no válida. Inténtalo de nuevo.");

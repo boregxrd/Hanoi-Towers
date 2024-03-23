@@ -47,70 +47,169 @@ namespace Torres_de_Hanoi
 
         public int iterativo(int numeroDiscosTotales, Pila ini, Pila fin, Pila aux)
         {
-            int movimientosIterativo = 0; 
+            int movimientosIterativo = 0;
 
-            if ( numeroDiscosTotales % 2 == 0  ) { // el algoritmo cambia un poco dependiendo de si es par o impar
-                while (fin.Size != numeroDiscosTotales) {
+            if (numeroDiscosTotales % 2 == 0) // Si el número de discos es par
+            {
+                while (fin.Size != numeroDiscosTotales)
+                {   
+                    if (moverDiscoEntrePilas(ini, aux))
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de INI a AUX");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de AUX a INI");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
 
-                    if (moverDiscoEntrePilas(ini, aux)) { // como se menciono en la funcion, dependiendo  
-                        Console.WriteLine("Movemos disco de ini a aux"); // de sidevuelve true o false es 
-                    } else {                                             // de A a B o viceversa.
-                        Console.WriteLine("Movemos disco de aux a ini");
-                    } movimientosIterativo++;
-                    
-                    if (fin.Size == numeroDiscosTotales) break; // para cada movimiento se verifica si ha terminado el juego
+                    if (fin.Size == numeroDiscosTotales)
+                        break;
 
-                    if(moverDiscoEntrePilas(ini, fin)) {
-                        Console.WriteLine("Movemos disco de ini a fin");
-                    } else {
-                        Console.WriteLine("Movemos disco de fin a ini");
-                    } movimientosIterativo++;
+                    if (moverDiscoEntrePilas(ini, fin))
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de INI a FIN");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de FIN a INI");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
 
-                    if (fin.Size == numeroDiscosTotales) break;
+                    if (fin.Size == numeroDiscosTotales)
+                        break;
 
-                    if (moverDiscoEntrePilas(aux, fin)) {
-                        Console.WriteLine("Movemos disco de aux a fin");
-                    } else {
-                        Console.WriteLine("Movemos disco de fin a aux");
-                    } movimientosIterativo++;
-
-                }
-
-            } else { // si es impar
-                while (fin.Size != numeroDiscosTotales) {
-                    
-                    if (moverDiscoEntrePilas(ini, fin)) { 
-                        Console.WriteLine("Movemos disco de ini a fin");
-                    } else {
-                        Console.WriteLine("Movemos disco de fin a ini");
-                    } movimientosIterativo++;
-
-                    if ( fin.Size == numeroDiscosTotales ) break;
-
-                    if (moverDiscoEntrePilas(ini, aux)) {
-                        Console.WriteLine("Movemos disco de ini a aux");
-                    } else {
-                        Console.WriteLine("Movemos disco de aux a ini");
-                    } movimientosIterativo++; 
-                    
-                    if (fin.Size == numeroDiscosTotales ) break;
-
-                    if (moverDiscoEntrePilas(aux, fin)) {
-                        Console.WriteLine("Movemos disco de aux a fin");
-                    } else {
-                        Console.WriteLine("Movemos disco de fin a aux");
-                    } movimientosIterativo++; 
-
+                    if (moverDiscoEntrePilas(aux, fin))
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de AUX a FIN");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de FIN a AUX");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
                 }
             }
+            else // Si el número de discos es impar
+            {
+                while (fin.Size != numeroDiscosTotales)
+                {
+                    if (moverDiscoEntrePilas(ini, fin))
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de INI a FIN");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de FIN a INI");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
+
+                    if (fin.Size == numeroDiscosTotales)
+                        break;
+
+                    if (moverDiscoEntrePilas(ini, aux))
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de INI a AUX");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de AUX a INI");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
+
+                    if (fin.Size == numeroDiscosTotales)
+                        break;
+
+                    if (moverDiscoEntrePilas(aux, fin))
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de AUX a FIN");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Situación tras el movimiento " + ++movimientosIterativo + " de FIN a AUX");
+                        Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                        Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                        Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                        Console.WriteLine();
+                    }
+                }
+            }
+
             return movimientosIterativo;
         }
 
+
         int movimientosRecursivo = 0; //los movimientos en recursivo se declaran de forma global
                                       //porque si no se reescribirían constantemente
-        public int recursivo(int n, Pila ini, Pila fin, Pila aux)
-        {
 
+        public int recursivoConTexto(int n, Pila ini, Pila fin, Pila aux)
+        {
+            if (n == 1)
+            {
+                moverDiscoEntrePilas(ini, fin);
+                movimientosRecursivo++;
+                Console.WriteLine("Situación tras el movimiento " + movimientosRecursivo);
+                Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                Console.WriteLine();
+            }
+            else
+            {
+                recursivoConTexto(n - 1, ini, aux, fin);
+                moverDiscoEntrePilas(ini, fin);
+                movimientosRecursivo++;
+                Console.WriteLine("Situación tras el movimiento " + movimientosRecursivo);
+                Console.WriteLine("Pila INI: " + string.Join(", ", ini.obtenerContenidoPila()));
+                Console.WriteLine("Pila AUX: " + string.Join(", ", aux.obtenerContenidoPila()));
+                Console.WriteLine("Pila FIN: " + string.Join(", ", fin.obtenerContenidoPila()));
+                Console.WriteLine();
+                recursivoConTexto(n - 1, aux, fin, ini);
+            }
+
+            return movimientosRecursivo;
+        }
+
+        /*        public int recursivo(int n, Pila ini, Pila fin, Pila aux) {
             if (n == 1)
             {
                 moverDiscoEntrePilas(ini, fin);
@@ -125,7 +224,7 @@ namespace Torres_de_Hanoi
             }
 
             return movimientosRecursivo;
-        }
+        }*/
 
     }
 }
