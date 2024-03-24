@@ -26,3 +26,10 @@ C:\Users\manue\OneDrive - UPV\University\2do Curso 2do Cuatrimestre\Algoritmica 
 C:\Users\manue\OneDrive - UPV\University\2do Curso 2do Cuatrimestre\Algoritmica y matematicas videojuegos\Practicas\Torres_de_Hanoi\Hanoi Towers\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.CoreCompileInputs.cache
 C:\Users\manue\OneDrive - UPV\University\2do Curso 2do Cuatrimestre\Algoritmica y matematicas videojuegos\Practicas\Torres_de_Hanoi\Hanoi Towers\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.exe
 C:\Users\manue\OneDrive - UPV\University\2do Curso 2do Cuatrimestre\Algoritmica y matematicas videojuegos\Practicas\Torres_de_Hanoi\Hanoi Towers\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.pdb
+C:\Users\Mario\OneDrive - UPV\.Universidad\SEGUNDO\B\Hanoi-Towers\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe.config
+C:\Users\Mario\OneDrive - UPV\.Universidad\SEGUNDO\B\Hanoi-Towers\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe
+C:\Users\Mario\OneDrive - UPV\.Universidad\SEGUNDO\B\Hanoi-Towers\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.pdb
+C:\Users\Mario\OneDrive - UPV\.Universidad\SEGUNDO\B\Hanoi-Towers\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.AssemblyReference.cache
+C:\Users\Mario\OneDrive - UPV\.Universidad\SEGUNDO\B\Hanoi-Towers\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.CoreCompileInputs.cache
+C:\Users\Mario\OneDrive - UPV\.Universidad\SEGUNDO\B\Hanoi-Towers\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.exe
+C:\Users\Mario\OneDrive - UPV\.Universidad\SEGUNDO\B\Hanoi-Towers\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.pdb
